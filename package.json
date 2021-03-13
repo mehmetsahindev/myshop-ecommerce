@@ -1,8 +1,9 @@
 {
-  "name": "myShop-ecommerce",
+  "name": "myshop-ecommerce",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node backend/server",
     "server": "nodemon backend/server",
