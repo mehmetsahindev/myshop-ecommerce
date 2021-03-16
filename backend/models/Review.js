@@ -27,10 +27,4 @@ Review.init(
 	}
 );
 
-Review.belongsTo(connectDB.models.Product, {
-	foreignKey: 'productId',
-	onDelete: 'RESTRICT',
-	onUpdate: 'RESTRICT',
-});
-
 export default Review;

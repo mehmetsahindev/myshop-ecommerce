@@ -1,6 +1,8 @@
 import Sequelize from 'sequelize';
 import connectDB from '../config/database.js';
 
+import Product from './Product.js';
+
 class User extends Sequelize.Model {}
 
 User.init(

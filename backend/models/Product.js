@@ -1,7 +1,5 @@
 import Sequelize from 'sequelize';
 import connectDB from '../config/database.js';
-import OrderProducts from './OrderProducts.js';
-import Order from './Order.js';
 
 class Product extends Sequelize.Model {}
 
@@ -56,17 +54,5 @@ Product.init(
 		timestamps: true,
 	}
 );
-
-Product.belongsTo(connectDB.models.User, {
-	foreignKey: 'userId',
-	onDelete: 'RESTRICT',
-	onUpdate: 'RESTRICT',
-});
-
-Product.belongsToMany(Order, {
-	through: OrderProducts,
-	foreignKey: 'productId',
-	otherKey: 'orderId',
-});
 
 export default Product;

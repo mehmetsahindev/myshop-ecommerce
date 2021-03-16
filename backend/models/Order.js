@@ -1,8 +1,6 @@
 import Sequelize from 'sequelize';
 import connectDB from '../config/database.js';
 
-import Address from './Address.js';
-
 class Order extends Sequelize.Model {}
 
 Order.init(
@@ -51,11 +49,5 @@ Order.init(
 		timestamps: true,
 	}
 );
-
-Order.belongsTo(Address, {
-	foreignKey: 'addressId',
-	onDelete: 'RESTRICT',
-	onUpdate: 'RESTRICT',
-});
 
 export default Order;

@@ -31,10 +31,4 @@ PaymentResult.init(
 	}
 );
 
-PaymentResult.belongsTo(connectDB.models.Order, {
-	foreignKey: 'orderId',
-	onDelete: 'RESTRICT',
-	onUpdate: 'RESTRICT',
-});
-
 export default PaymentResult;

@@ -31,10 +31,4 @@ Address.init(
 	}
 );
 
-Address.belongsTo(connectDB.models.User, {
-	foreignKey: 'userId',
-	onDelete: 'RESTRICT',
-	onUpdate: 'RESTRICT',
-});
-
 export default Address;
