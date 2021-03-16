@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import db from './config/database.js';
+import connectDB from './config/database.js';
+import syncModels from './models/index.js';
 import products from './data/products.js';
 
 dotenv.config();
@@ -8,15 +9,7 @@ process.env.TZ = 'Europe/Istanbul';
 
 const app = express();
 
-// Connect Database
-db.authenticate()
-	.then(() => console.log('Database connected...'))
-	.catch((err) => console.log('Error: ' + err));
-
-// Sync tables
-db.sync().then(() => {
-	console.log('All tables created');
-});
+await syncModels();
 
 app.get('/', (req, res) => {
 	res.send('API is running...');

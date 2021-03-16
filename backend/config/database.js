@@ -4,7 +4,7 @@ dotenv.config();
 
 const { HOST, DBNAME, DBUSER, DB_PASSWORD } = process.env;
 
-const db = new Sequelize(DBNAME, DBUSER, DB_PASSWORD, {
+const connectDB = new Sequelize(DBNAME, DBUSER, DB_PASSWORD, {
 	host: HOST,
 	dialect: 'mysql',
 	// timezone: '+03:00',
@@ -17,4 +17,4 @@ const db = new Sequelize(DBNAME, DBUSER, DB_PASSWORD, {
 	},
 });
 
-export default db;
+export default connectDB;
